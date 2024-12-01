@@ -147,7 +147,7 @@ document.getElementById("contactForm").addEventListener("submit", function(event
   const subject = document.getElementById("subject").value;
   const message = document.getElementById("message").value;
 
-  const mailtoLink = `mailto:your-email@example.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent("Name: " + name + "\nEmail: " + email + "\n\nMessage:\n" + message)}`;
+  const mailtoLink = `mailto:skcsayma02@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent("Name: " + name + "\nEmail: " + email + "\n\nMessage:\n" + message)}`;
 
   window.location.href = mailtoLink;
 });
