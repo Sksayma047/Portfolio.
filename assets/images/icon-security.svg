@@ -1,0 +1,14 @@
+<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="sec_grad_glow" x1="4" y1="2" x2="36" y2="38" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#BE29EC"/>
+      <stop offset="100%" stop-color="#9F149F"/>
+    </linearGradient>
+  </defs>
+  <!-- Background Shield Shadow/Tint -->
+  <path opacity="0.15" d="M20 3L7 8V19C7 27.5 12.5 35.3 20 37C27.5 35.3 33 27.5 33 19V8L20 3Z" fill="url(#sec_grad_glow)"/>
+  <!-- Shield Outline -->
+  <path d="M20 3L7 8V19C7 27.5 12.5 35.3 20 37C27.5 35.3 33 27.5 33 19V8L20 3Z" stroke="url(#sec_grad_glow)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Checkmark / Lock Detail -->
+  <path d="M15 19.5L18.5 23L25 16.5" stroke="url(#sec_grad_glow)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

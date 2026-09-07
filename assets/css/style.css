@@ -612,42 +612,125 @@ main {
   line-height: 1.6;
 }
 
+.timeline-text-list {
+  padding-left: 20px;
+  list-style: disc;
+  margin-top: 10px;
+}
+
+.timeline-text-list li {
+  color: var(--light-gray);
+  font-weight: var(--fw-300);
+  line-height: 1.6;
+  font-size: var(--fs-6);
+  margin-bottom: 8px;
+}
+
+.timeline-text-list li::marker {
+  color: var(--orange-yellow-crayola);
+}
+
 
 /**
  * skills 
  */
 
-.skills-title { margin-bottom: 20px; }
+.skills-title { margin-bottom: 22px; }
 
-.skills-list { padding: 20px; }
+.skills-categories-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
 
+.skill-category-card {
+  position: relative;
+  background: var(--border-gradient-onyx);
+  padding: 22px;
+  border-radius: 16px;
+  box-shadow: var(--shadow-2);
+  z-index: 1;
+  transition: transform var(--transition-1), box-shadow var(--transition-1);
+}
 
-.skills-item:not(:last-child) { margin-bottom: 15px; }
+.skill-category-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-3);
+}
 
-.skill .title-wrapper {
+.skill-category-card::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  background: var(--bg-gradient-jet);
+  border-radius: inherit;
+  z-index: -1;
+}
+
+.category-header {
   display: flex;
   align-items: center;
-  gap: 5px;
-  margin-bottom: 8px;
+  gap: 12px;
+  margin-bottom: 14px;
 }
 
-.skill .title-wrapper data {
-  color: var(--light-gray);
-  font-size: var(--fs-7);
-  font-weight: var(--fw-300);
-}
-
-.skill-progress-bg {
-  background: var(--jet);
-  width: 100%;
-  height: 8px;
+.category-icon {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--border-gradient-onyx);
   border-radius: 10px;
+  position: relative;
+  z-index: 1;
 }
 
-.skill-progress-fill {
-  background: var(--text-gradient-yellow);
-  height: 100%;
+.category-icon::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  background: var(--eerie-black-1);
   border-radius: inherit;
+  z-index: -1;
+}
+
+.category-icon ion-icon {
+  color: var(--orange-yellow-crayola);
+  font-size: 20px;
+}
+
+.category-title {
+  color: var(--white-2);
+  font-size: var(--fs-5);
+  font-weight: var(--fw-500);
+}
+
+.skill-tags-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.skill-tag {
+  background: hsl(240, 2%, 16%);
+  color: var(--light-gray);
+  border: 1px solid var(--jet);
+  padding: 6px 13px;
+  border-radius: 8px;
+  font-size: var(--fs-7);
+  font-weight: var(--fw-400);
+  transition: all var(--transition-1);
+  cursor: default;
+  user-select: none;
+}
+
+.skill-tag:hover {
+  color: var(--white-1);
+  border-color: var(--orange-yellow-crayola);
+  background: hsla(293, 100%, 72%, 0.12);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px hsla(293, 100%, 72%, 0.2);
 }
 
 
@@ -660,10 +743,7 @@ main {
 
 .filter-list { display: none; }
 
-.filter-select-box {
-  position: relative;
-  margin-bottom: 25px;
-}
+.filter-select-box { display: none; }
 
 .filter-select {
   background: var(--eerie-black-2);
@@ -757,18 +837,50 @@ main {
   transition: var(--transition-1);
 }
 
+.project-item > a:hover .project-img::before {
+  background: hsla(0, 0%, 0%, 0.6);
+}
 
+.project-item-icon-box {
+  --scale: 0.7;
 
+  background: var(--jet);
+  color: var(--orange-yellow-crayola);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(var(--scale));
+  font-size: 22px;
+  padding: 16px;
+  border-radius: 14px;
+  opacity: 0;
+  z-index: 2;
+  transition: var(--transition-1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px hsla(293, 100%, 72%, 0.35);
+  border: 1px solid var(--orange-yellow-crayola);
+}
 
-
-
-
+.project-item > a:hover .project-item-icon-box {
+  --scale: 1;
+  opacity: 1;
+}
 
 .project-img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: var(--transition-1);
+}
+
+.project-item > a:hover .project-img img {
+  transform: scale(1.08);
+}
+
+.project-item > a:hover .project-title {
+  color: var(--orange-yellow-crayola);
 }
 
 
@@ -1182,6 +1294,17 @@ textarea.form-input::-webkit-resizer { display: none; }
    */
 
   .navbar-link { --fs-8: 15px; }
+
+
+
+  /**
+   * RESUME / SKILLS
+   */
+
+  .skills-categories-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+  }
 
 
 
